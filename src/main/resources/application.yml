@@ -1,0 +1,20 @@
+spring:
+    application:
+      name: spring-data-service
+    cassandra:
+      username: token
+      password: ${ASTRA_DB_PASSWORD}
+      keyspace-name: ${ASTRA_DB_KEYSPACE}
+      schema-action: CREATE_IF_NOT_EXISTS
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+
+server.port: 8081
+
+springdoc.swagger-ui.path: /swagger-ui.html
+
+datastax.astra:
+  secure-connect-bundle: ${ASTRA_DB_BUNDLE}
